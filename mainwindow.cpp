@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QCheckBox>
+#include <QInputDialog>
+#include <QFont>
 
 
 
@@ -54,13 +56,38 @@ void MainWindow::on_listWidget_currentRowChanged(int currentRow)
 
 void MainWindow::on_pushButton_3_clicked()
 {
-
+    for (int i = 0; i < ui->listWidget->count(); i++) {
+           QListWidgetItem* item = ui->listWidget->item(i);
+           QCheckBox* checkbox = qobject_cast<QCheckBox*>(ui->listWidget->itemWidget(item));
+           if (checkbox && checkbox->isChecked()) {
+               ui->listWidget->takeItem(i);
+               delete item;
+               i--;
+           }
+    }
 }
 
 
 void MainWindow::on_pushButton_4_clicked()
 {
+    if (ligneSelected == -1) // Vérifie si un élément est sélectionné
+           return;
 
+    QListWidgetItem* item = ui->listWidget->item(ligneSelected);
+    QCheckBox* checkbox = qobject_cast<QCheckBox*>(ui->listWidget->itemWidget(item));
+
+    if (!checkbox) // Vérifie si l'item est un QCheckBox
+           return;
+
+    QString task = checkbox->text(); // Récupère le texte du QCheckBox
+
+    // Crée une boîte de dialogue pour demander à l'utilisateur de modifier la tâche
+    bool ok;
+    QString newTask = QInputDialog::getText(this, tr("TODO LIST"), tr("Modifier la tâche :"), QLineEdit::Normal, task, &ok);
+
+        if (ok && !newTask.isEmpty()) { // Si l'utilisateur a cliqué sur OK et que le texte n'est pas vide
+           checkbox->setText(newTask); // Met à jour le texte du QCheckBox avec la nouvelle tâche
+    }
 }
 
 
