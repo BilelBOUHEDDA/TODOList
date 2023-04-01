@@ -29,18 +29,18 @@ void MainWindow::on_pushButton_clicked()
 {
     QString task = ui->lineEdit->text();
 
-       if (task == "")
-           return;
+    if (task == "")
+        return;
 
-       QListWidgetItem* item = new QListWidgetItem(ui->listWidget);
-       QCheckBox* checkbox = new QCheckBox(task);
-       item->setSizeHint(checkbox->sizeHint());
-       ui->listWidget->addItem(item);
-       ui->listWidget->setItemWidget(item, checkbox);
+    QListWidgetItem* item = new QListWidgetItem(ui->listWidget);
+    QCheckBox* checkbox = new QCheckBox(task);
+    item->setSizeHint(checkbox->sizeHint());
+    item->setBackground(Qt::red); // mettre en rouge
+    ui->listWidget->addItem(item);
+    ui->listWidget->setItemWidget(item, checkbox);
 
-       ui->lineEdit->clear();
+    ui->lineEdit->clear();
 }
-
 
 void MainWindow::on_pushButton_2_clicked()
 {
