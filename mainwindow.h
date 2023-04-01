@@ -33,6 +33,12 @@ private slots:
 
     void on_listWidget_currentRowChanged(int currentRow);
 
+    void on_listWidget_itemActivated(QListWidgetItem *item);
+
+
+
+    void on_pushButton_5_clicked();
+
 private:
     Ui::MainWindow *ui;
 

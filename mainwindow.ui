@@ -32,9 +32,15 @@
      <rect>
       <x>20</x>
       <y>60</y>
-      <width>551</width>
+      <width>271</width>
       <height>311</height>
      </rect>
+    </property>
+    <property name="dragEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="dragDropOverwriteMode">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
@@ -66,9 +72,9 @@
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>300</x>
       <y>490</y>
-      <width>551</width>
+      <width>271</width>
       <height>41</height>
      </rect>
     </property>
@@ -97,6 +103,35 @@
       <width>551</width>
       <height>51</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>60</y>
+      <width>271</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="dragEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="dragDropOverwriteMode">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>490</y>
+      <width>271</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Valider les tâches</string>
     </property>
    </widget>
   </widget>
