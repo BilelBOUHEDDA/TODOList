@@ -9,6 +9,12 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    connect(ui->lineEdit, &QLineEdit::returnPressed, this, &MainWindow::on_pushButton_clicked);
+
+    ui->headlineLabel->setText("TODO LIST MANAGER : Ajouter, modifier et supprimer des tâches en toute simplicité");
+                               ui->headlineLabel->setAlignment(Qt::AlignHCenter);
+
 }
 
 MainWindow::~MainWindow()
