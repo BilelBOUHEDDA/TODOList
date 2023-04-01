@@ -100,6 +100,7 @@ void MainWindow::on_pushButton_5_clicked()
             QCheckBox* newCheckbox = new QCheckBox(checkbox->text(), ui->listWidget_2);
             newCheckbox->setChecked(true);
             newItem->setSizeHint(newCheckbox->sizeHint());
+            newItem->setBackground(QBrush(Qt::green));
             ui->listWidget_2->addItem(newItem);
             ui->listWidget_2->setItemWidget(newItem, newCheckbox);
             ui->listWidget->takeItem(i);
