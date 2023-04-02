@@ -61,13 +61,23 @@ void MainWindow::on_listWidget_currentRowChanged(int currentRow)
 void MainWindow::on_pushButton_3_clicked()
 {
     for (int i = 0; i < ui->listWidget->count(); i++) {
-           QListWidgetItem* item = ui->listWidget->item(i);
-           QCheckBox* checkbox = qobject_cast<QCheckBox*>(ui->listWidget->itemWidget(item));
-           if (checkbox && checkbox->isChecked()) {
-               ui->listWidget->takeItem(i);
-               delete item;
-               i--;
-           }
+        QListWidgetItem* item = ui->listWidget->item(i);
+        QCheckBox* checkbox = qobject_cast<QCheckBox*>(ui->listWidget->itemWidget(item));
+        if (checkbox && checkbox->isChecked()) {
+            ui->listWidget->takeItem(i);
+            delete item;
+            i--;
+        }
+    }
+
+    for (int i = 0; i < ui->listWidget_2->count(); i++) {
+        QListWidgetItem* item = ui->listWidget_2->item(i);
+        QCheckBox* checkbox = qobject_cast<QCheckBox*>(ui->listWidget_2->itemWidget(item));
+        if (checkbox && checkbox->isChecked()) {
+            ui->listWidget_2->takeItem(i);
+            delete item;
+            i--;
+        }
     }
 }
 
@@ -92,7 +102,7 @@ void MainWindow::on_pushButton_4_clicked()
         if (ok && !newTask.isEmpty()) { // Si l'utilisateur a cliqué sur OK et que le texte n'est pas vide
            checkbox->setText(newTask); // Met à jour le texte du QCheckBox avec la nouvelle tâche
     }
-}   
+}
 
 void MainWindow::on_pushButton_5_clicked()
 {
