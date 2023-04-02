@@ -3,7 +3,7 @@
 #include <QCheckBox>
 #include <QInputDialog>
 #include <QFont>
-
+#include <QComboBox>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -39,6 +39,7 @@ void MainWindow::on_pushButton_clicked()
     checkbox->setStyleSheet("background-color: red");
 
     item->setSizeHint(checkbox->sizeHint());
+
     ui->listWidget->addItem(item);
     ui->listWidget->setItemWidget(item, checkbox);
 
@@ -48,11 +49,20 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    QListWidgetItem *it = ui->listWidget->takeItem(ligneSelected);
-       delete it;
+
+    QListWidgetItem *item2 = ui->listWidget_2->takeItem(ligneSelected);
+    delete item2;
+
+    QListWidgetItem *item = ui->listWidget->takeItem(ligneSelected);
+       delete item;
 }
 
 void MainWindow::on_listWidget_currentRowChanged(int currentRow)
+{
+    ligneSelected = currentRow;
+}
+
+void MainWindow::on_listWidget_2_currentRowChanged(int currentRow)
 {
     ligneSelected = currentRow;
 }

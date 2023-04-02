@@ -39,6 +39,8 @@ private slots:
     void on_pushButton_5_clicked();
     void updateTaskCategory(int index);
 
+    void on_listWidget_2_currentRowChanged(int currentRow);
+
 private:
     Ui::MainWindow *ui;
     int ligneSelected = -1;
