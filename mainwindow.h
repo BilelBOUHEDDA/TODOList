@@ -35,9 +35,7 @@ private slots:
     void on_pushButton_3_clicked();
     void on_pushButton_4_clicked();
     void on_listWidget_currentRowChanged(int currentRow);
-    void on_listWidget_itemActivated(QListWidgetItem *item);
     void on_pushButton_5_clicked();
-    void updateTaskCategory(int index);
 
     void on_listWidget_2_currentRowChanged(int currentRow);
 
