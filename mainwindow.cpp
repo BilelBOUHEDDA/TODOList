@@ -34,13 +34,17 @@ void MainWindow::on_pushButton_clicked()
 
     QListWidgetItem* item = new QListWidgetItem(ui->listWidget);
     QCheckBox* checkbox = new QCheckBox(task);
+
+    // Ajouter la couleur de fond rouge
+    checkbox->setStyleSheet("background-color: red");
+
     item->setSizeHint(checkbox->sizeHint());
-    item->setBackground(Qt::red); // mettre en rouge
     ui->listWidget->addItem(item);
     ui->listWidget->setItemWidget(item, checkbox);
 
     ui->lineEdit->clear();
 }
+
 
 void MainWindow::on_pushButton_2_clicked()
 {

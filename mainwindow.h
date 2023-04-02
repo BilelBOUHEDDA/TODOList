@@ -18,30 +18,30 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    enum class TaskCategory {
+        Urgent,
+        Personnel,
+        Professionnel,
+        Sante,
+        Finances,
+        Projets
+    };
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-
 private slots:
     void on_pushButton_clicked();
-
     void on_pushButton_2_clicked();
-
     void on_pushButton_3_clicked();
-
     void on_pushButton_4_clicked();
-
     void on_listWidget_currentRowChanged(int currentRow);
-
     void on_listWidget_itemActivated(QListWidgetItem *item);
-
-
-
     void on_pushButton_5_clicked();
+    void updateTaskCategory(int index);
 
 private:
     Ui::MainWindow *ui;
-
     int ligneSelected = -1;
 };
-#endif // MAINWINDOW_H
+
+#endif

@@ -131,7 +131,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Valider les tâches</string>
+     <string>Valider les tâches coché</string>
     </property>
    </widget>
   </widget>
